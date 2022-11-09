@@ -1,6 +1,8 @@
 # trpc-iron-session
 
-Secure your tRPC based on iron session authentication.
+[`English`](./README.md) | [한국어(KR)](./README.ko.md)
+
+Secure your tRPC based on `iron-session` authentication.
 
 The project structure is based on [iron-session examples next.js-typescript][project-structure-based]
 
@@ -8,7 +10,7 @@ Changed the `HTTP API` part to `tRPC` without changing the project structure as 
 
 Thanks to this, if you pour [iron-session examples next.js-typescript][project-structure-based] here as it is, it will `diff` so you can easily see the changes.
 
-> that the `SSG` page in the example is meaningless because of the `SSR` option of `tRPC` .
+> that the `SSG` page in the example is meaningless because of the `SSR` option of `tRPC`. 🙄
 
 ## Start
 
@@ -21,7 +23,7 @@ npm run dev
 
 ### Forwarding SSR Cookies
 
-If you are logged in through SSR, you may want to quickly display user information in the header.
+If you are logged in through `SSR` , you may want to quickly display user information in the `<Header />` .
 
 To do this, you need to pass cookies to tRPC during SSR.
 
