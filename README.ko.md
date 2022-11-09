@@ -6,7 +6,7 @@
 
 [iron-session examples next.js-typescript][project-structure-based] 프로젝트를 기반으로 구축되었습니다.
 
-프로젝트 구조를 최대한 바꾸지 않고 `HTTP API` 부분을 `tRPC`로 변경했습니다.
+프로젝트 구조를 최대한 바꾸지 않고 `HTTP API` 부분을 `tRPC` 로 변경했습니다.
 
 덕분에 해당 리포에 [iron-session examples next.js-typescript][project-structure-based]를 그대로 넣으면 `diff` 가 되어 변경 사항을 쉽게 확인할 수 있습니다.
 
