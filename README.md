@@ -1,9 +1,14 @@
-## Overview
+# trpc-iron-session
 
-1. `iron-session` 을 `tRPC` 에서 사용하는 예제입니다.
-1. https://github.com/vvo/iron-session/blob/main/examples/next.js-typescript/README.md 으로 스케폴드 되었습니다.
-1. 최대한 프로젝트 스트럭처를 바꾸지 않고 `HTTP API` 부분을 `tRPC` 으로 변경하였습니다. 스케폴드된 코드를 여기에 그대로 부으면 `diff` 되어 변경점을 볼 수 있을 겁니다.
-1. `tRPC` 를 전역으로 적용해서 `SSG` 페이지는 사실 의미가 없습니다.
+Secure your tRPC based on iron session authentication.
+
+The project structure is based on [iron-session examples next.js-typescript][project-structure-based]
+
+Changed the `HTTP API` part to `tRPC` without changing the project structure as much as possible.
+
+Thanks to this, if you pour [iron-session examples next.js-typescript][project-structure-based] here as it is, it will `diff` so you can easily see the changes.
+
+> that the `SSG` page in the example is meaningless because of the `SSR` option of `tRPC` .
 
 ## Start
 
@@ -11,3 +16,27 @@
 npm i
 npm run dev
 ```
+
+## Core
+
+### Forwarding SSR Cookies
+
+If you are logged in through SSR, you may want to quickly display user information in the header.
+
+To do this, you need to pass cookies to tRPC during SSR.
+
+Please refer to [src/utils/trpc.ts](./src/utils/trpc.ts) for the related code.
+
+### Passing iron-session value to tRPC Context
+
+If you are familiar with `iron-session`, we will use the `req.session` to manipulate cookies.
+
+`tRPC` must be passed as a `Context` to achieve this.
+
+Please refer to [src/server/context.ts](./src/server/context.ts) for the related code.
+
+## Reference
+
+[Projects used for scaffolding][project-structure-based]
+
+[project-structure-based]: https://github.com/vvo/iron-session/blob/main/examples/next.js-typescript/README.md
