@@ -1,0 +1,46 @@
+{
+  "name": "next.js-typescript",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.14.5",
+    "@trpc/client": "^10.0.0-rc.6",
+    "@trpc/next": "^10.0.0-rc.6",
+    "@trpc/react-query": "^10.0.0-rc.6",
+    "@trpc/server": "^10.0.0-rc.6",
+    "iron-session": "^6.2.0",
+    "next": "^12.2.5",
+    "octokit": "^2.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zod": "^3.19.1"
+  },
+  "devDependencies": {
+    "@octokit/types": "^7.0.0",
+    "@tanstack/react-query-devtools": "^4.14.5",
+    "@types/react": "^18.0.17",
+    "eslint-config-next": "latest",
+    "typescript": "^4.7.4"
+  },
+  "renovate": {
+    "extends": [
+      "config:js-app",
+      ":automergePatch",
+      ":automergeBranch",
+      ":automergePatch",
+      ":automergeBranch",
+      ":automergeLinters",
+      ":automergeTesters",
+      ":automergeTypes"
+    ],
+    "timezone": "Europe/Paris",
+    "schedule": [
+      "before 3am on Monday"
+    ]
+  }
+}
