@@ -5,7 +5,7 @@ import { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 import type { AppRouter } from "src/server/routers/_app";
 
 function getBaseUrl() {
-  // 해당 코드가 있어야 Client Side에서 서빙되는 도메인으로 요청이 됩니다
+  // 브라우저는 상대 경로를 사용해야 합니다: 해당 코드가 있어야 Client Side에서 서빙되는 도메인으로 요청이 됩니다
   if (typeof window !== "undefined") {
     return "";
   }
