@@ -4,6 +4,15 @@ import { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 // ℹ️ Type-only import: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
 import type { AppRouter } from "src/server/routers/_app";
 
+function getBaseUrl() {
+  // 해당 코드가 있어야 Client Side에서 서빙되는 도메인으로 요청이 됩니다
+  if (typeof window !== "undefined") {
+    return "";
+  }
+
+  return `http://localhost:${process.env.PORT ?? 3000}`;
+}
+
 export const trpc = createTRPCNext<AppRouter>({
   config({ ctx }) {
     return {
@@ -15,7 +24,7 @@ export const trpc = createTRPCNext<AppRouter>({
             (opts.direction === "down" && opts.result instanceof Error),
         }),
         httpBatchLink({
-          url: `http://localhost:${process.env.PORT ?? 3000}/api/trpc`,
+          url: `${getBaseUrl()}/api/trpc`,
           headers() {
             if (ctx?.req) {
               /**
